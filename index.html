@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Favicon.png">
     
     <!-- Facebook Open Graph Tags -->
-    <meta property="og:title" content="Gameville - Free Online Games">
+    <meta property="og:title" content="Tulsa Games - Free Online Games">
     <meta property="og:description" content="Free online game play with no hassles! No downloads or sign-ups! Just pure awesome gameplay!">
     <meta property="og:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Gameville+Meta+Image">
     <meta property="og:image:width" content="1200">
@@ -50,7 +50,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://github.com/TitanBusinessPros/Gameville-/raw/main/okc-4.jpeg') no-repeat center center fixed;
+            background: url('https://github.com/TitanBusinessPros/Gameville-/raw/main/Tulsa-games-back.png') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             padding: 20px;
@@ -317,6 +317,28 @@
             transform: scale(1.1);
         }
 
+        /* Footer additions */
+        .footer-bottom {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        .footer-address, .footer-website {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-website {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-website:hover {
+            text-decoration: underline;
+        }
+
         /* Make it a bit nicer on small screens */
         @media (max-width: 900px) {
             .page-wrapper {
@@ -367,7 +389,7 @@
 <body>
     <!-- Background Music -->
     <audio id="background-music" loop>
-        <!-- Music placeholder - add your music source here -->
+        <source src="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC%20Roofers%20Jingle.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     
@@ -380,34 +402,13 @@
 
         <!-- HEADER SECTION -->
         <header class="site-header">
-            <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Top.png" alt="Gameville Logo" class="header-logo" id="logo">
-            <h1 class="header-title">Discover Oklahoma City's Newest Gaming Platform!</h1>
+            <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Top-2.png" class="header-logo" id="logo">
+            <h1 class="header-title">Discover Tulsa's Newest Gaming Platform.</h1>
             <div class="daily-message">Check back daily for new games!</div>
         </header>
 
         <!-- TOP ROW: ads -->
-        <div class="ads-row">
-            <a href="https://www.singanewpsalm.church/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/SANS.png" alt="Ad 1">
-            </a>
-            <a href="https://www.theopenchurchproject.org/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville/raw/main/OCP.png" alt="Ad 12">
-            </a>
-            <a href="https://www.okiewebsiteguy.com/" class="ad-box">
-                <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Logo-2.png" alt="Ad 30">
-            </a>
-        </div>
-
-        <!-- MIDDLE ROW: left ads, center game, right ads -->
-        <div class="middle-row">
-            <!-- LEFT COLUMN: ads -->
-            <div class="ads-col">
-                <a href="https://titanbusinesspros.github.io/Ed-Game-Pricing/" class="ad-box">
-                    <img loading="lazy" src="https://github.com/TitanBusinessPros/Ed-Game-Pricing/raw/main/Education%20Games%20Ad-1.png" alt="Ad 31">
-                </a>
-            </div>
-
-            <!-- CENTER: Your game / gallery -->
+                    <!-- CENTER: Your game / gallery -->
             <div class="center-container">
                 <h1 class="center-title">Welcome To Gameville</h1>
                 <div class="inner-grid">
@@ -723,18 +724,26 @@
         <!-- FOOTER SECTION -->
         <footer class="site-footer">
             <div class="footer-content">
-                <div class="footer-copyright">Copyright 2025 Titan Business Pros LLC</div>
+                <div class="footer-copyright">Copyright 2025 Your Roofing Company LLC</div>
                 <div class="footer-contact">
                     <a href="https://www.facebook.com/p/OKC-Roofers-100067991445574/" class="footer-social-link" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <span class="footer-phone">405-998-7979</span>
-                    <span class="footer-email">titanbusinesspros@gmail.com</span>
+                    <a href="https://www.instagram.com/okcroofers/" class="footer-social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@okcroofers829" class="footer-social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <span class="footer-phone">(405)796-8858</span>
+                    <span class="footer-email">info@okcroofers.com</span>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-address">8901 S Santa Fe Ave suite h, Oklahoma City, OK, United States, Oklahoma</div>
+                    <a href="https://www.okcroofers.com" class="footer-website" target="_blank">www.okcroofers.com</a>
                 </div>
             </div>
         </footer>
-
-    </div>
 
     <script>
         // Make the logo interactive with mouse movement
@@ -819,9 +828,13 @@
         const musicToggle = document.getElementById('music-toggle');
         let musicStarted = false;
 
+        // Set the music source
+        backgroundMusic.src = "https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC%20Roofers%20Jingle.mp3";
+
         // Function to start music
         function startMusic() {
             if (!musicStarted) {
+                backgroundMusic.volume = 0.5; // Set volume to 50%
                 backgroundMusic.play().then(() => {
                     musicStarted = true;
                     musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
