@@ -8,13 +8,16 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-F8LTDKS8KY');
 </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gameville - Free Online Games</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://github.com/TitanBusinessPros/Gameville-/raw/main/Tulsa-games-back.png" as="image">
+    <link rel="preload" href="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Top-2.png" as="image">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Favicon.png">
@@ -264,6 +267,8 @@
             height: 160px;
             display: block;
             overflow: hidden;
+            background: #f5f5f5;
+            position: relative;
         }
 
         .image-container img {
@@ -271,6 +276,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container img.loaded {
+            opacity: 1;
         }
 
         .image-container:hover img {
@@ -292,6 +303,27 @@
             color: #666;
             line-height: 1.5;
             font-size: 0.9em;
+        }
+
+        /* Loading placeholder */
+        .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
         }
 
         /* Music control */
@@ -404,19 +436,20 @@
         <header class="site-header">
             <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Top-2.png" class="header-logo" id="logo">
             <h1 class="header-title">Discover Tulsa's Newest Gaming Platform.</h1>
-            <div class="daily-message">Check back weekly for new games!</div>
+            <div class="daily-message">Check back daily for new games!</div>
         </header>
 
-        <!-- TOP ROW: ads -->
-                    <!-- CENTER: Your game / gallery -->
+        <!-- CENTER: Your game / gallery -->
+        <div class="middle-row">
             <div class="center-container">
-                <h1 class="center-title"></h1>
+                <h1 class="center-title">Welcome To Gameville</h1>
                 <div class="inner-grid">
-                    <!-- Example main game card: replace with iframe or actual game -->
+                    <!-- All games restored with lazy loading -->
 
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Chess-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Chess%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Chess%20Logo.png" alt="Chess">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Chess</h2>
@@ -424,9 +457,10 @@
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Sudoku-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Sudoku-Game/raw/main/Sudoku-Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sudoku-Game/raw/main/Sudoku-Logo.png" alt="Sudoku">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Sudoku</h2>
@@ -436,7 +470,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Neon-Drift/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/SSG-Image/raw/main/Neon%20Drift%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/SSG-Image/raw/main/Neon%20Drift%20Logo.png" alt="Neon Drift">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Neon Drift</h2>
@@ -446,17 +481,19 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Gravity-Sling/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gravity-Sling/raw/main/Gravity%20Sling%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gravity-Sling/raw/main/Gravity%20Sling%20Logo.png" alt="Gravity Sling">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Gravity Sling</h2>
-                            <p class="item-description">Test your skills in a game of Gravity Sling. Play one player only.Only playable on tablet & desktop.</p>
+                            <p class="item-description">Test your skills in a game of Gravity Sling. Play one player only. Only playable on tablet & desktop.</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Detective/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Detective/raw/main/Detective%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Detective/raw/main/Detective%20Logo.png" alt="Detective">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Detective</h2>
@@ -466,9 +503,9 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Dodge-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Dodge-Game/raw/main/Dodge-Logo.png" alt="Chess">
-                            
-                             </a>
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Dodge-Game/raw/main/Dodge-Logo.png" alt="Dodge">
+                        </a>
                         <div class="content">
                             <h2 class="item-title">Dodge</h2>
                             <p class="item-description">Try your skill and test your eye movement! Dodge the blocks as they gain speed! See if you can even pass 200 points! Not tested for mobile yet.</p>
@@ -477,18 +514,19 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Desert-Rattler-/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Desert-Rattler-/raw/main/Desert%20Rattler%20Logo.png" alt="Chess">
-                            
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Desert-Rattler-/raw/main/Desert%20Rattler%20Logo.png" alt="Desert Rattler">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Desert Rattler</h2>
-                            <p class="item-description">Can you score 120 or higher? One player only.Good on mobile play!</p>
+                            <p class="item-description">Can you score 120 or higher? One player only. Good on mobile play!</p>
                         </div>
                     </div>
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Match-Time/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Match-Time/raw/main/Match%20Time%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-Time/raw/main/Match%20Time%20Logo.png" alt="Match Time">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Match Time</h2>
@@ -498,7 +536,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Sea-War/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Sea-War/raw/main/SEA%20WAR%20Logo.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Sea-War/raw/main/SEA%20WAR%20Logo.png" alt="Sea War">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Sea War</h2>
@@ -508,7 +547,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Frisbee-Golf/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Chess">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Frisbee-Golf/raw/main/Frisbee%20Golf%20Logo%202.png" alt="Frisbee Golf">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Frisbee Golf</h2>
@@ -518,7 +558,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Checkers-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/CheckersLogo.png" alt="Checkers">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Checkers</h2>
@@ -528,7 +569,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Hearts-Card-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Hearts.png" alt="Hearts">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Hearts.png" alt="Hearts">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Hearts</h2>
@@ -538,7 +580,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Bowling-1/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Bowling%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Bowling%20Game%20Logo.png" alt="Bowling">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Bowling</h2>
@@ -548,7 +591,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/BlackJack/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Blackjack%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Blackjack%20Logo.png" alt="Blackjack">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Blackjack</h2>
@@ -558,7 +602,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Kids-Coloring-Fun/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Kids%20Coloring%20Book%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Kids%20Coloring%20Book%20Logo.png" alt="Kids Coloring Book">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Kids Coloring Book</h2>
@@ -568,7 +613,8 @@
                     
                     <div class="inner-item">
                         <a href="https://best-businesses.github.io/Your-Company-Video-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Space%20Defense%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Titan%20Space%20Defense%20Logo.png" alt="Titan Space Defense">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Titan Space Defense</h2>
@@ -578,7 +624,8 @@
                     
                     <div class="inner-item">
                         <a href="https://best-businesses.github.io/My-Food-Truck-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/My%20Food%20Truck%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/My%20Food%20Truck%20Logo.png" alt="My Food Truck">
                         </a>
                         <div class="content">
                             <h2 class="item-title">My Food Truck</h2>
@@ -588,7 +635,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Magical-Word-Search/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Magical%20Word%20Search.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Magical%20Word%20Search.png" alt="Magical Word Search">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Magical Word Search</h2>
@@ -598,7 +646,8 @@
                     
                     <div class="inner-item">
                         <a href="https://team-america.github.io/Patriotic-Blockade/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Patriotic%20Blocks%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Patriotic%20Blocks%20Logo.png" alt="Patriotic Blocks">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Patriotic Blocks</h2>
@@ -606,9 +655,10 @@
                         </div>
                     </div>
                     
-                   <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Luxury-Casino/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Luxury%20Casino-2-Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Luxury%20Casino-2-Logo.png" alt="Luxury Casino">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Luxury Casino</h2>
@@ -618,7 +668,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Match-3/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Match-3/raw/main/Match-3%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Match-3/raw/main/Match-3%20Logo.png" alt="Match 3">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Match 3</h2>
@@ -628,7 +679,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Math-Tower-Defense/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Math%20Tower%20Defense.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Math%20Tower%20Defense.png" alt="Math Tower Defense">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Math Tower Defense</h2>
@@ -637,9 +689,9 @@
                     </div>
                     
                     <div class="inner-item">
-                        <a href="https://titanbusinesspros.github.io/Stacking-Checkers/
-" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Stacking%20Checkers%20Logo.png" alt="Featured 3">
+                        <a href="https://titanbusinesspros.github.io/Stacking-Checkers/" class="image-container">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Stacking%20Checkers%20Logo.png" alt="Stacking Checkers">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Stacking Checkers</h2>
@@ -649,7 +701,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/War-Card-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/War-Card-Game/raw/main/War%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/War-Card-Game/raw/main/War%20Logo.png" alt="War Card Game">
                         </a>
                         <div class="content">
                             <h2 class="item-title">War Card Game</h2>
@@ -659,7 +712,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Follow-Along/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Follow-Along/raw/main/Follow%20Along%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Follow-Along/raw/main/Follow%20Along%20Logo.png" alt="Follow Along">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Follow Along</h2>
@@ -669,7 +723,8 @@
                     
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Turkey/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Space-Turkey/raw/main/Space%20Turkey%20Game%20Logo.png" alt="Space Turkey">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Turkey</h2>
@@ -677,9 +732,10 @@
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Math-Asteroids-Hard/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Space%20Asteroids.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Education-Logos/raw/main/Space%20Asteroids.png" alt="Space Math Asteroids">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Math Asteroids</h2>
@@ -687,9 +743,10 @@
                         </div>
                     </div>
                     
-                     <div class="inner-item">
+                    <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Golf-Game/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Golf-Game/raw/main/Golf%20Game%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Golf-Game/raw/main/Golf%20Game%20Logo.png" alt="Golf Challenge">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Golf Challenge</h2>
@@ -699,14 +756,15 @@
               
                     <div class="inner-item">
                         <a href="https://titanbusinesspros.github.io/Space-Word-Mission/" class="image-container">
-                            <img loading="lazy" src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Featured 3">
+                            <div class="image-placeholder"></div>
+                            <img loading="lazy" data-src="https://github.com/TitanBusinessPros/Gameville-Logos/raw/main/Space%20Word%20Mission%20Logo.png" alt="Space Word Mission">
                         </a>
                         <div class="content">
                             <h2 class="item-title">Space Word Mission</h2>
                             <p class="item-description">This is a one player word search game. Test your brain and see if you can take your spaceship to flight!</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -746,6 +804,43 @@
         </footer>
 
     <script>
+        // Image optimization and lazy loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load images
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.getAttribute('data-src');
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                            const placeholder = img.previousElementSibling;
+                            if (placeholder && placeholder.classList.contains('image-placeholder')) {
+                                placeholder.style.display = 'none';
+                            }
+                        });
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            // Preload critical images
+            const criticalImages = [
+                'https://github.com/TitanBusinessPros/Gameville-/raw/main/OKC-Top-2.png'
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
         // Make the logo interactive with mouse movement
         const logo = document.getElementById('logo');
         let isDragging = false;
