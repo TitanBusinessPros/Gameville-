@@ -111,6 +111,52 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+
+        /* ART Services Logo Styles */
+        .art-logo-left,
+        .art-logo-right {
+            position: absolute;
+            top: 10px;
+            width: 90px;
+            height: auto;
+            transition: transform 0.3s ease;
+            animation: flip 4s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .art-logo-left {
+            left: 10px;
+        }
+
+        .art-logo-right {
+            right: 10px;
+        }
+
+        .art-logo-left:hover,
+        .art-logo-right:hover {
+            animation-play-state: paused;
+            transform: scale(1.1);
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateY(0deg) translateY(0px);
+            }
+            25% {
+                transform: rotateY(180deg) translateY(-10px);
+            }
+            50% {
+                transform: rotateY(360deg) translateY(0px);
+            }
+            75% {
+                transform: rotateY(180deg) translateY(-10px);
+            }
+            100% {
+                transform: rotateY(0deg) translateY(0px);
+            }
         }
 
         .header-logo {
@@ -467,6 +513,26 @@
                 font-size: 1em;
                 padding: 6px 12px;
             }
+
+            .art-logo-left,
+            .art-logo-right {
+                width: 75px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .art-logo-left,
+            .art-logo-right {
+                width: 60px;
+            }
+
+            .art-logo-left {
+                left: 5px;
+            }
+
+            .art-logo-right {
+                right: 5px;
+            }
         }
     </style>
 </head>
@@ -491,10 +557,18 @@
 
         <!-- HEADER SECTION -->
         <header class="site-header">
+            <!-- ART Services Logos -->
+            <a href="https://titanbusinesspros.github.io/A.R.T.-Services/" target="_blank">
+                <img src="https://github.com/TitanBusinessPros/A.R.T.-Services/raw/main/ART-Logo-New.png" class="art-logo-left" alt="ART Services">
+            </a>
+            <a href="https://titanbusinesspros.github.io/A.R.T.-Services/" target="_blank">
+                <img src="https://github.com/TitanBusinessPros/A.R.T.-Services/raw/main/ART-Logo-New.png" class="art-logo-right" alt="ART Services">
+            </a>
+            
             <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Temp-Logo.png" class="header-logo" id="logo">
             <h1 class="header-title">Welcome To Tulsa's Newest Gaming Platform! Check Back Weekly For New Games!</h1>
-            <div class="daily-message">Welcome to Tulsa’s gaming hub! 🎮
-You’ve landed on a local gaming platform built for players right here in Tulsa, OK. Whether you’re here to relax, challenge yourself, or explore something new, our growing collection of games is designed for all ages and play styles. From strategy boards and arcade-style challenges to competitive scoreboards and creative game worlds, this is a place where Tulsa comes together to play, compete, and have fun.</div>
+            <div class="daily-message">Welcome to Tulsa's gaming hub! 🎮
+You've landed on a local gaming platform built for players right here in Tulsa, OK. Whether you're here to relax, challenge yourself, or explore something new, our growing collection of games is designed for all ages and play styles. From strategy boards and arcade-style challenges to competitive scoreboards and creative game worlds, this is a place where Tulsa comes together to play, compete, and have fun.</div>
         </header>
 
         <!-- CENTER: Your game / gallery -->
