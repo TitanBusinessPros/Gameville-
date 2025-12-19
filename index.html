@@ -8,7 +8,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-F8LTDKS8KY');
+  gtag('config', 'G-ZTXGY3JS5M');
 </script>
 
     <meta charset="UTF-8">
@@ -114,49 +114,25 @@
             position: relative;
         }
 
-        /* ART Services Logo Styles */
-        .art-logo-left,
-        .art-logo-right {
-            position: absolute;
-            top: 10px;
-            width: 90px;
+        /* Header Ad Images */
+        .header-ads-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .header-ad-image {
+            width: 150px;
             height: auto;
-            transition: transform 0.3s ease;
-            animation: flip 4s ease-in-out infinite;
+            transition: transform 0.3s ease, filter 0.3s ease;
             cursor: pointer;
-            z-index: 10;
         }
 
-        .art-logo-left {
-            left: 10px;
-        }
-
-        .art-logo-right {
-            right: 10px;
-        }
-
-        .art-logo-left:hover,
-        .art-logo-right:hover {
-            animation-play-state: paused;
-            transform: scale(1.1);
-        }
-
-        @keyframes flip {
-            0% {
-                transform: rotateY(0deg) translateY(0px);
-            }
-            25% {
-                transform: rotateY(180deg) translateY(-10px);
-            }
-            50% {
-                transform: rotateY(360deg) translateY(0px);
-            }
-            75% {
-                transform: rotateY(180deg) translateY(-10px);
-            }
-            100% {
-                transform: rotateY(0deg) translateY(0px);
-            }
+        .header-ad-image:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .header-logo {
@@ -539,34 +515,27 @@
                 padding: 6px 12px;
             }
 
-            .art-logo-left,
-            .art-logo-right {
-                width: 75px;
+            .header-ad-image {
+                width: 100px;
             }
 
-            .add-logo-button {
-                font-size: 1em;
-                padding: 10px 25px;
+            .header-ads-container {
+                gap: 10px;
             }
         }
 
         @media (max-width: 600px) {
-            .art-logo-left,
-            .art-logo-right {
-                width: 60px;
-            }
-
-            .art-logo-left {
-                left: 5px;
-            }
-
-            .art-logo-right {
-                right: 5px;
-            }
-
             .add-logo-button {
                 font-size: 0.95em;
                 padding: 10px 20px;
+            }
+
+            .header-ad-image {
+                width: 80px;
+            }
+
+            .header-ads-container {
+                gap: 8px;
             }
         }
     </style>
@@ -592,13 +561,80 @@
 
         <!-- HEADER SECTION -->
         <header class="site-header">
-            <!-- ART Services Logos -->
-            <a href="https://titanbusinesspros.github.io/EZ-Remodeling/" target="_blank">
-                <img src="https://github.com/TitanBusinessPros/EZ-Remodeling/raw/main/EZ-Favicon.png" class="art-logo-left" alt="ART Services">
-            </a>
-            <a href="https://titanbusinesspros.github.io/A.R.T.-Services/" target="_blank">
-                <img src="https://github.com/TitanBusinessPros/A.R.T.-Services/raw/main/ART-Logo-New.png" class="art-logo-right" alt="ART Services">
-            </a>
+            <!-- Header Ad Images - Row 1 -->
+            <div class="header-ads-container">
+                <a href="https://titanbusinesspros.github.io/EZ-Remodeling/" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/EZ-Remodeling/raw/main/EZ-Favicon.png" class="header-ad-image" alt="EZ Remodeling">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://titanbusinesspros.github.io/A.R.T.-Services/" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/A.R.T.-Services/raw/main/ART-Logo-New.png" class="header-ad-image" alt="ART Services">
+                </a>
+            </div>
+            
+            <!-- Header Ad Images - Row 2 -->
+            <div class="header-ads-container">
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+            </div>
+            
+            <!-- Header Ad Images - Row 3 -->
+            <div class="header-ads-container">
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+                <a href="https://buy.stripe.com/eVq3cw5xn4kg2Lw3B57AI0f" target="_blank">
+                    <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Games-Ad.png" class="header-ad-image" alt="Advertise Here">
+                </a>
+            </div>
             
             <img src="https://github.com/TitanBusinessPros/Gameville-/raw/main/Temp-Logo.png" class="header-logo" id="logo">
             <h1 class="header-title">Welcome To Tulsa's Newest Gaming Platform! Check Back Weekly For New Games!</h1>
@@ -1048,7 +1084,16 @@ You've landed on a local gaming platform built for players right here in Tulsa, 
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://www.pinterest.com/titanbusinesspros/" class="footer-social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a href="https://x.com/Titan_Biz_Pros" class="footer-social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@titan_business_pros" class="footer-social-link" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.tumblr.com/blog/titanbusinesspros" class="footer-social-link" target="_blank">
+                        <i class="fab fa-tumblr"></i>
                     </a>
                     <a href="https://www.youtube.com/@TitanBusinessPros" class="footer-social-link" target="_blank">
                         <i class="fab fa-youtube"></i>
@@ -1063,7 +1108,7 @@ You've landed on a local gaming platform built for players right here in Tulsa, 
             </div>
         </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Image optimization and lazy loading
         document.addEventListener('DOMContentLoaded', function() {
             // Lazy load images
